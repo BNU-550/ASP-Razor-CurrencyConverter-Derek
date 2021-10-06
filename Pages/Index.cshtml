@@ -4,11 +4,33 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Core5 Razor Pages</h1>
-    <h2>by Derek Peacock</h2>
+<div style="background-color:burlywood">
+    <header class="text-center">
+        <h1 class="display-4">Core5 Razor Pages</h1>
+        <h2>by @Model.FullName</h2>
+    </header>
     <br/><br/>
-    <form method="post">
+    <form method="post" class="mx-auto" style="width:200px">
+        <p class="col-sm-2">
+            <label for="name">Name</label>
+            <input type="text" required="true" placeholder="Your full name" asp-for="FullName">
+        </p>
+        <p class="col-sm-4">
+            <label for="email">Email</label>
+            <input type="email" required="true" name="email">
+        </p>
+        <p class="col-sm-2">
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+        </p>
+        <p class="col-sm-12">
+            @ViewData["Message"]
+        </p>
+    </form>
+
+
+    @*<form method="post" class="text-left">
         <div class="form-group">
             <label for="Name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-4">
@@ -16,14 +38,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="Email" class="col-sm-2 control-label">Email</label>
+            <label for="Email" class="col-sm -2 control-label">Email</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Email">
+                <input type="email" class="form-control" name="Email">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-4">
-                <button type="submit" class="btn btn-default">Register</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
         </div>
-    </form></div>
+    </form>*@
+</div>
